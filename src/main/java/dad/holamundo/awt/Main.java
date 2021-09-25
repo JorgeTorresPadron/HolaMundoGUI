@@ -2,21 +2,20 @@ package dad.holamundo.awt;
 
 public class Main {
 
-	MiClase clase = new MiClase();
-	clase.saludar("Manolete", "Gómez");
+public static void main(String[] args) {
+		
+		MiInterfaz mi1 = new MiInterfaz() {
+			@Override
+			public void saludar(String nombre, String apellidos) {
+				System.out.println("Buenos días " + nombre);
+			}
+		};
 
-//	MiInterfaz implementacion = new MiInterfaz() {
-//		public void saludar(String nombre) {
-//			System.out.println("Buenos días " + nombre);
-//		}
-//	};
-
-	MiInterfaz implementacion = (n, a) -> {
-		a += "!!!";
-		System.out.println("Buenos días " + n + " " + a);
-	};
-
-	implementacion.saludar("Manolete", "Gómez");
+		MiInterfaz mi2 = (n, a) -> System.out.println("Hola " + n + " " + a + "!!!");
+		
+		mi1.saludar("Manolito", "Gómez");
+		mi2.saludar("Manolito", "Gómez");
+		
+	}
 
 }
-
